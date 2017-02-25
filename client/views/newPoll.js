@@ -6,8 +6,12 @@ Template.newPoll.created = function(){
 Template.newPoll.events = {
 	'click [data-action="open-new-poll-input"]': function(event){
 		event.preventDefault();
-		var template = Template.instance();
-		template.creatingPoll.set(true);
+			if(Meteor.userId() === null) {
+				alert('Please log in to create a new poll.');
+			} else {
+				var template = Template.instance();
+				template.creatingPoll.set(true);
+			}
 	},
 	'click [data-action="cancel-new-poll"]': function(event){
 		event.preventDefault();
