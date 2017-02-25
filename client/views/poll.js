@@ -10,9 +10,7 @@ Template.pollDetails.events = {
 		event.preventDefault();
 
 		var currentVotes = Votes.find().fetch();
-			console.log('currentVotes:', currentVotes);
 		var currentUser = Meteor.userId();
-			console.log('currentUser:', currentUser);
 
 		if(currentUser === null) {
 			alert('Please log in to vote.');
