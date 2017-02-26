@@ -23,7 +23,14 @@ Template.newPoll.events = {
 		var template = Template.instance();
 		Polls.insert({
 			userId: Meteor.userId(),
-			title: template.$('#newPollTitle').val(),
+			title: function() {
+				var title = template.$('#newPollTitle').val();
+				if (!title) {
+					alert('A title is required!');
+				} else {
+					return template.$('#newPollTitle').val();
+				}
+			},
 			description: template.$('#newPollDescription').val(),
 			timestamp: moment().valueOf(),
 			options: [
@@ -33,4 +40,5 @@ Template.newPoll.events = {
 		});
 		template.creatingPoll.set(false);
 	}
+
 };
