@@ -1,6 +1,6 @@
 Polls.allow({
 	insert: function(userId, doc){
-		return true;
+		return !!userId;
 	},
 	update: function(userId, doc, fields, modifier){
 		return true;
@@ -12,7 +12,7 @@ Polls.allow({
 
 Votes.allow({
 	insert: function(userId, doc){
-		return true;
+		return !!userId;
 	},
 	update: function(userId, doc, fields, modifier){
 		return true;

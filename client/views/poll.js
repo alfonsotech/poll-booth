@@ -6,16 +6,37 @@ Template.pollListItem.events = {
 };
 
 Template.pollDetails.events = {
-	'click [data-action="vote-on-poll"]': function(event){
+	'click [data-action="vote-on-poll"]':
+	function(event){
 		event.preventDefault();
-		var poll = Template.currentData();
-		var pollOption = this;
-		Votes.insert({
-			userId: Meteor.userId(),
-			pollId: poll && poll._id,
-			timestamp: moment().valueOf(),
-			option: pollOption.valueOf()
-		});
+
+		var currentVotes = Votes.find().fetch();
+
+		var currentUser = Meteor.userId();
+
+		if(currentUser === null) {
+			alert('Please log in to vote.');
+		} else {
+			for(var i = 0; i < currentVotes.length; i++) {
+				if(currentVotes[i].userId === currentUser) {
+					alert('You can only vote once!');
+					return;
+				}
+			}
+
+			var poll = Template.currentData();
+			var pollOption = this;
+
+
+			Votes.insert({
+				userId: Meteor.userId(),
+				pollId: poll && poll._id,
+				timestamp: moment().valueOf(),
+				option: pollOption.valueOf(),
+			});
+			//remove hidden attribute
+			$('.poll-details-results').removeClass('hidden');
+		}
 	}
 };
 
