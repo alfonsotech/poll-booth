@@ -15,6 +15,18 @@
           <div class="row">
             <textarea id="newPollDescription" placeholder="Description of what we're voting on"></textarea>
           </div>
+
+          <div class="row">
+                <input class="newPollQuestion" type="text" placeholder="Type your first question...">
+          </div>
+          <div class="row">
+                <input class="newPollQuestion" type="text" placeholder="Type your second question...">
+          </div>
+
+          <div class="row">
+            <button id="addPollQuestion" class="btn btn-default" data-action="add-new-poll-question">Add A Question (6 max)</button>
+          </div>
+
           <div class="row">
             <button class="btn btn-default" data-action="cancel-new-poll">Cancel</button>
             <button class="btn btn-success" data-action="create-new-poll">Create Poll</button>
