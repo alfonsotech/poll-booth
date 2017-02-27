@@ -28,7 +28,7 @@ Template.newPoll.events = {
 
 	 if(!title){
 		 alert('A title is required!');
-		 createNewPoll();
+		//  createNewPoll();
 	 } else {
 		 Polls.insert({
 			 userId: Meteor.userId(),
@@ -41,8 +41,8 @@ Template.newPoll.events = {
 				 'No'
 			 ]
 		 });
+		 template.creatingPoll.set(false);
 	 }
-		template.creatingPoll.set(false);
 	}
 
 };
