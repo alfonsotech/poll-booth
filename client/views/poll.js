@@ -19,7 +19,7 @@ Template.pollDetails.events = {
 				if(currentVotes[i].userId === currentUser) {
 					alert('You can only vote once!');
 					return;
-				};
+				}
 			}
 			var poll = Template.currentData();
 			var pollOption = this;
