@@ -6,10 +6,12 @@ Template.pollListItem.events = {
 };
 
 Template.pollDetails.events = {
-	'click [data-action="vote-on-poll"]': function(event){
+	'click [data-action="vote-on-poll"]':
+	function(event){
 		event.preventDefault();
 
 		var currentVotes = Votes.find().fetch();
+
 		var currentUser = Meteor.userId();
 
 		if(currentUser === null) {
@@ -21,14 +23,19 @@ Template.pollDetails.events = {
 					return;
 				}
 			}
+
 			var poll = Template.currentData();
 			var pollOption = this;
+
+
 			Votes.insert({
 				userId: Meteor.userId(),
 				pollId: poll && poll._id,
 				timestamp: moment().valueOf(),
-				option: pollOption.valueOf()
+				option: pollOption.valueOf(),
 			});
+			//remove hidden attribute
+			$('.poll-details-results').removeClass('hidden');
 		}
 	}
 };
