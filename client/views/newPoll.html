@@ -2,7 +2,7 @@
   <div class="text-center">
 
     {{#if reactiveVarEquals 'creatingPoll' false}}
-        <button class="btn btn-default" data-action="open-new-poll-input">Create New Poll</button>
+       <button class="btn btn-default" data-action="open-new-poll-input">Create New Poll</button>
     {{/if}}
     {{#momentum plugin='slide-height-fade'}}
         {{#if reactiveVarEquals 'creatingPoll' true}}
@@ -13,18 +13,18 @@
                 <input id="newPollTitle" type="text" placeholder="Poll Title"/>
           </div>
           <div class="row">
-            <textarea id="newPollDescription" placeholder="Description of what we're voting on"></textarea>
+            <textarea  id="newPollDescription" placeholder="Description of what we're voting on"></textarea>
           </div>
 
           <div class="row">
-                <input class="newPollQuestion" type="text" placeholder="Type your first question...">
+                <input id="question1" class="newPollQuestion" type="text" placeholder="Type your first question...">
           </div>
           <div class="row">
-                <input class="newPollQuestion" type="text" placeholder="Type your second question...">
+                <input id="question2" class="newPollQuestion" type="text" placeholder="Type your second question...">
           </div>
 
           <div class="row">
-            <button id="addPollQuestion" class="btn btn-default" data-action="add-new-poll-question">Add A Question (6 max)</button>
+            <button id="addPollQuestion" class="btn btn-default" data-action="add-new-poll-question">Add A Question</button>
           </div>
 
           <div class="row">

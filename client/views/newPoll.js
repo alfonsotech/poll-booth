@@ -26,15 +26,18 @@ Template.newPoll.events = {
 
 		var title = template.$('#newPollTitle').val();
 
-	 if(!title){
+		if(!title){
 		 alert('A title is required!');
-	 } else {
+	 	} else {
 		 Polls.insert({
 			 userId: Meteor.userId(),
 			 title:
-			 template.$('#newPollTitle').val(),
+			 title,
 			 description: template.$('#newPollDescription').val(),
 			 timestamp: moment().valueOf(),
+			 questions: [
+				 template.$('#question1').val(), template.$('#question2').val()
+		 		],
 			 options: [
 				 'Yes',
 				 'No'
@@ -43,5 +46,4 @@ Template.newPoll.events = {
 		 template.creatingPoll.set(false);
 	 }
 	}
-
 };
