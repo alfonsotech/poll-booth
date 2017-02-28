@@ -28,7 +28,6 @@ Template.newPoll.events = {
 
 	 if(!title){
 		 alert('A title is required!');
-		//  createNewPoll();
 	 } else {
 		 Polls.insert({
 			 userId: Meteor.userId(),
