@@ -56,10 +56,9 @@
 						Cast Your Vote:
 						<div class="poll-details-options text-center">
 							{{#each questions}}
-							<h1>{{this}}
-								{{#each options}}
-									<button class="btn btn-default" data-action="vote-on-poll">{{this}}</button>
-								{{/each}}</h1>
+							<h1>{{question}}</h1>
+								<button class="btn btn-default" data-action="vote-on-poll">{{options1}}</button>
+								<button class="btn btn-default" data-action="vote-on-poll">{{options2}}</button>
 							{{/each}}
 						</div>
 					</div>

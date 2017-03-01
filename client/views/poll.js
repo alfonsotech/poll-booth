@@ -46,3 +46,10 @@ Template.pollDetails.helpers({
 		return Votes.find({option: pollOption.valueOf()}).count();
 	}
 });
+
+// Template.pollDetails.helpers({
+// questions: function() {
+// 	return _.map(object, function(val, key) {
+// 		return {question: template.$('#question1').val(), options1: 'Yes', options2: 'No'}});
+// 	}
+// });

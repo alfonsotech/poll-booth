@@ -35,9 +35,7 @@ Template.newPoll.events = {
 			 title,
 			 description: template.$('#newPollDescription').val(),
 			 timestamp: moment().valueOf(),
-			 questions: [
-				 template.$('#question1').val(), template.$('#question2').val()
-		 		],
+			 questions: questions,
 			 options: [
 				 'Yes',
 				 'No'
@@ -47,3 +45,11 @@ Template.newPoll.events = {
 	 }
 	}
 };
+
+Template.newPoll.helpers({
+questions: function() {
+	question = template.$('#question1').val();
+	return _.map(object, function(val, key) {
+		return {question: question, options1: 'Yes', options2: 'No'}});
+	}
+});
