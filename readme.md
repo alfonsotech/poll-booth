@@ -65,10 +65,6 @@ be a very popular poll provider, so we want our home page to be able to display 
 performant. Use any way you see fit to minimize the load time for our home page while still allowing the user to browse 
 through a large number of polls.
 
-##We're here to help
-If you have any questions, or run into technical issues, or even just want some clarification or direction for anything 
-please don't hesitate to ask. Just drop me an e-mail at david@torsh.co and I'll be glad to help out.
-
 
 
 
